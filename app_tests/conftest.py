@@ -14,13 +14,13 @@ def browser(request):
     browser = None
     user_language = request.config.getoption("language")
     if browser_name == "chrome":
-        print("\nstart chrome browser for test..")
+        print("\nstart chrome browser for app_tests..")
 
         options = Options()
         options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
         browser = webdriver.Chrome(options=options)
     elif browser_name == "firefox":
-        print("\nstart firefox browser for test..")
+        print("\nstart firefox browser for app_tests..")
 
         fp = webdriver.FirefoxProfile()
         fp.set_preference("intl.accept_languages", user_language)
