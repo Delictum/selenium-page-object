@@ -1,0 +1,1 @@
+from test.test_main_page import test_guest_can_go_to_login_page
