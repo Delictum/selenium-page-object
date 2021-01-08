@@ -12,10 +12,10 @@ class ProductPage(BasePage):
         alert_product = self.browser.find_element(*ProductPageLocators.INFO_ABOUT_ADDED_PRODUCT)
         assert alert_product, "Alert info about added product is not presented."
 
-    def should_info_contain_name_product(self):
+    def should_info_equal_name_product(self):
         alert_product = self.browser.find_element(*ProductPageLocators.INFO_ABOUT_ADDED_PRODUCT).text
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
-        assert product_name in alert_product, "Alert doesn't contain the name of the product added to the basket."
+        assert product_name == alert_product, "Alert doesn't equal the name of the product added to the basket."
 
     def should_be_alert_info_about_total_in_basket(self):
         total_in_basket = self.browser.find_element(*ProductPageLocators.TOTAL_IN_BASKET)
