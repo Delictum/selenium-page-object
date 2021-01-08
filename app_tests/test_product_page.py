@@ -17,4 +17,4 @@ def test_guest_can_add_product_to_basket(browser):
     page.should_be_alert_info_about_total_in_basket()
     page.should_info_basket_total_equal_price(9.99)
 
-    time.sleep(20)
+    time.sleep(3)
