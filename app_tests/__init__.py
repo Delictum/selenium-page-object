@@ -1,1 +1,1 @@
-import app_tests.test_main_page
+from app_tests import test_main_page, test_product_page
