@@ -20,3 +20,36 @@ def test_guest_can_add_product_to_basket(browser, num):
 
     page.should_be_alert_info_about_total_in_basket()
     page.should_info_basket_total_equal_price()
+
+
+@pytest.mark.skip
+def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
+    link = f'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
+
+    page = ProductPage(browser, link)
+    page.open()
+
+    page.add_item_to_basket()
+
+    page.should_not_be_success_message()
+
+
+def test_guest_cant_see_success_message(browser):
+    link = f'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
+
+    page = ProductPage(browser, link)
+    page.open()
+
+    page.should_not_be_success_message()
+
+
+@pytest.mark.skip
+def test_message_disappeared_after_adding_product_to_basket(browser):
+    link = f'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
+
+    page = ProductPage(browser, link)
+    page.open()
+
+    page.add_item_to_basket()
+
+    page.should_disappear_of_success_message()
