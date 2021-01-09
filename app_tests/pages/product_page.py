@@ -1,8 +1,9 @@
 from app_tests.pages.base_page import BasePage
 from app_tests.pages.locators import ProductPageLocators
+from app_tests.pages.with_basket_link_page import WithBasketLinkPage
 
 
-class ProductPage(BasePage):
+class ProductPage(BasePage, WithBasketLinkPage):
     def add_item_to_basket(self):
         add_to_basket_btn = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BTN)
         add_to_basket_btn.click()

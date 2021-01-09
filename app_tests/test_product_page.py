@@ -2,6 +2,7 @@ import time
 
 import pytest
 
+from app_tests.pages.basket_page import BasketPage
 from app_tests.pages.login_page import LoginPage
 from app_tests.pages.product_page import ProductPage
 
@@ -37,6 +38,16 @@ def test_guest_can_add_product_to_basket(browser, num):
 
     page.should_be_alert_info_about_total_in_basket()
     page.should_info_basket_total_equal_price()
+
+
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    link = "http://selenium1py.pythonanywhere.com/"
+    page = ProductPage(browser, link)
+    page.open()
+    page.go_to_basket_page()
+    basket_page = BasketPage(browser, browser.current_url)
+    basket_page.should_not_be_items_in_basket()
+    basket_page.should_be_empty_basket_text()
 
 
 @pytest.mark.skip

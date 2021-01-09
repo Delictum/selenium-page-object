@@ -22,3 +22,13 @@ class ProductPageLocators:
     PRODUCT_NAME = (By.CSS_SELECTOR, ".product_main > h1")
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main > .price_color")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success > .alertinner")
+
+
+class WithBasketLinkPageLocators:
+    BASKET_LINK = (By.CSS_SELECTOR, ".basket-mini .btn-group > a.btn")
+    BASKET_LINK_INVALID = (By.CSS_SELECTOR, ".basket-mini .btn-group > a.btn.inc")
+
+
+class BasketPageLocators:
+    EMPTY_BASKET_TEXT = (By.CSS_SELECTOR, "#content_inner > p")
+    BASKET_ITEMS = (By.CSS_SELECTOR, "#basket_formset")
