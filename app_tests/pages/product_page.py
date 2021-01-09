@@ -1,6 +1,5 @@
 from app_tests.pages.base_page import BasePage
 from app_tests.pages.locators import ProductPageLocators
-from app_tests.utils.price_parser import get_price_from_str
 
 
 class ProductPage(BasePage):
