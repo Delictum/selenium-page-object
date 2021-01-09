@@ -1,3 +1,4 @@
+import logging
 import math
 
 from selenium.common.exceptions import NoSuchElementException, NoAlertPresentException, TimeoutException
@@ -32,7 +33,7 @@ class BasePage:
 
     def is_disappeared(self, how, what, timeout=4):
         try:
-            WebDriverWait(self.browser, timeout, 1, TimeoutException).\
+            WebDriverWait(self.browser, timeout, 1, TimeoutException). \
                 until_not(EC.presence_of_element_located((how, what)))
         except TimeoutException:
             return False
@@ -45,6 +46,7 @@ class BasePage:
     def should_be_authorized_user(self):
         assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
                                                                      " probably unauthorised user"
+
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
@@ -56,8 +58,7 @@ class BasePage:
         alert.accept()
         try:
             alert = self.browser.switch_to.alert
-            alert_text = alert.text
-            print(f"Your code: {alert_text}")
+            logging.info(alert.text)
             alert.accept()
         except NoAlertPresentException:
-            print("No second alert presented")
+            pass
