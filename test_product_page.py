@@ -6,7 +6,8 @@ from pages.login_page import LoginPage
 from pages.product_page import ProductPage
 
 
-LINK_CODERS_AT_WORK = f'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
+LINK_CODERS_AT_WORK = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
+LINK_CODERS_AT_WORK_PROMO = f"{LINK_CODERS_AT_WORK}/?promo=offer0"
 LINK_MAIN_PAGE = "http://selenium1py.pythonanywhere.com/"
 
 
@@ -48,9 +49,7 @@ class TestUserAddToBasketFromProductPage:
 
     @pytest.mark.need_review
     def test_user_can_add_product_to_basket(self, browser):
-        link = f'{LINK_CODERS_AT_WORK}/?promo=offer0'
-
-        page = ProductPage(browser, link)
+        page = ProductPage(browser, LINK_CODERS_AT_WORK_PROMO)
         page.open()
 
         page.add_item_to_basket()
@@ -76,9 +75,7 @@ class TestUserAddToBasketFromProductPage:
 
 @pytest.mark.need_review
 def test_guest_can_add_product_to_basket(browser):
-    link = LINK_CODERS_AT_WORK
-
-    page = ProductPage(browser, link)
+    page = ProductPage(browser, LINK_CODERS_AT_WORK_PROMO)
     page.open()
 
     page.add_item_to_basket()
