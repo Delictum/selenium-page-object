@@ -1,4 +1,4 @@
-from app_tests.pages.locators import WithBasketLinkPageLocators
+from .locators import WithBasketLinkPageLocators
 
 
 class WithBasketLinkPage:
@@ -7,4 +7,4 @@ class WithBasketLinkPage:
         link.click()
 
     def should_be_basket_link(self):
-        assert self.is_element_present(*WithBasketLinkPageLocators.BASKET_LINK), "Basket link is not presented"
+        assert self.is_element_present(*WithBasketLinkPageLocators.BASKET_LINK), "Basket link is not presented."

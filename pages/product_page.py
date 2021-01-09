@@ -1,6 +1,6 @@
-from app_tests.pages.base_page import BasePage
-from app_tests.pages.locators import ProductPageLocators
-from app_tests.pages.with_basket_link_page import WithBasketLinkPage
+from .base_page import BasePage
+from .locators import ProductPageLocators
+from .with_basket_link_page import WithBasketLinkPage
 
 
 class ProductPage(BasePage, WithBasketLinkPage):
