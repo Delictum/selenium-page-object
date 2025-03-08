@@ -1,6 +1,9 @@
 <h1 align="center">Selenium Page Object</h1>
 <img src="https://selenium-python.com/wp-content/uploads/2017/11/cropped-logo-mini.png" width="300">
 
+![Python Version](https://img.shields.io/badge/python-3.7-blue)
+![Selenium Version](https://img.shields.io/badge/selenium-3.14-blue)
+
 <h2>Описание</h2>
 <p>Представлен итоговый полноценный тестовый проект по изучению Selenium на образовательной платформе <a href="https://stepik.org" target="_blank">stepik.org</a> курса <a href="https://stepik.org/course/575/syllabus" target="_blank">Автоматизация тестирования с помощью Selenium и Python</a>.</p>
 <p>В качестве тестируемого сайта был использован прототип интернет-магазина <a href="http://selenium1py.pythonanywhere.com" target="_blank">selenium1py.pythonanywhere.com</a>. В проекте использован паттерн Page Object.</p>
